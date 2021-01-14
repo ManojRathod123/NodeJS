@@ -1,0 +1,7 @@
+// middleware function = the work of middleware function is that take the request otherwise pass the control to another middleware.
+// There are two types of middleware we have seen earlier
+    1- Route (req, res) - This is the one of our middleware function. bs it's take request object and send response to the client.
+    2 - express.json()-  This is also our middleware function. 
+                        - This is work when there is json request.its read the body of the part. 
+                        - Its take the request and convert it json object. 
+                        - req.body

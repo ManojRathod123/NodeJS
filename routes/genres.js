@@ -17,11 +17,13 @@ const Genre = mongoose.model(
 );
 
 router.get("/", async (req, res) => {
+  console.log('***')
   const genres = await Genre.find().sort("name"); //find() method will get all the genres that is sorted by name.
   res.send(genres);
 });
 
 router.post("/", async (req, res) => {
+  console.log(req.body)
   const { error } = validateGenre(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
