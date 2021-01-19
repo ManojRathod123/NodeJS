@@ -5,3 +5,51 @@
                         - This is work when there is json request.its read the body of the part. 
                         - Its take the request and convert it json object. 
                         - req.body
+
+
+/************** LODASH**************/
+
+Lodash makes JavaScript easier by taking the hassle out of working with arrays, numbers, objects, strings, etc.
+Lodash’s modular methods are great for:
+
+Iterating arrays, objects, & strings
+Manipulating & testing values
+Creating composite functions 
+
+/************** JOI PASSWORD COMPLEXCITY PACKAGE **************/
+
+we use this to increase COMPLEXCITY of PASSWORD.
+when no options are specified the follwing are used
+{
+  min: 8,
+  max: 26,
+  lowerCase: 1,
+  upperCase: 1,
+  numeric: 1,
+  symbol: 1,
+  requirementCount: 4,
+}
+
+/******************* HASH PASSWORD *****************/
+
+**SALT - A salt is a random string that use before and after the PASSWORD.
+ // The salt method use to create our HASH PASSWORD more complex.
+
+gensalt(10) // 10 stand for number of rounds we want to generate the algoritham.
+
+
+**************** JWT *************
+json web token:-  json web token is a string which send server to client....so  when next time client want to hit any of there API 
+he need to show his json web token only then he can access their api.
+
+1)The json encoded string represent the json object. 
+2) When we decode the encoded string we will get json object.
+
+** when we create JWT we need to pass two argument.. first is object second is private key
+
+******************* Config ******************
+** costom-environment-variable :- in this file we are defining the structure of our application setting.
+
+//  config.get('jwtPrivateKey')):- As we have mentioned this line in our auth routes..it means here we have define our
+application setting name. we have store our actual screct key in our environment variable. 
+
