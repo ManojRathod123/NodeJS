@@ -53,3 +53,14 @@ he need to show his json web token only then he can access their api.
 //  config.get('jwtPrivateKey')):- As we have mentioned this line in our auth routes..it means here we have define our
 application setting name. we have store our actual screct key in our environment variable. 
 
+******************* Logger ********************
+winston:- winston is designed to be a simple and universal logging library with support for multiple transports.
+Transports:-  A transport is essentially a storage device for our logs
+
+// this is the middleware function to handle the error...
+// here we have a function which is carry the  4 parameter. function (err, req, res, next)
+// the above function will catches the error which is in request pipe line...
+// this middleware function work only for  errors happen in request pipeline..
+// winston is library for logging.. Trasports is storage device for log...
+// if we got any error before application start then this function will not run...thats why we have a
+// WINSTON. unhandledException...we need to  winston.unhandledException()

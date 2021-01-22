@@ -6,17 +6,15 @@ const express = require("express");
 const router = express.Router();
 
 // create router....
-router.get("/", async (req, res) => {
-  try {
+router.get("/",async (req, res) => { // here we have called function asyncMiddleware.
+  throw new Error('could not get the genres');
     const genres = await Genre.find().sort("name"); //find() method will get all the genres which is sorted by name.
     res.send(genres);
   }
-  catch(ex){
-    res.status(500).send("Something failed") // 500 mean:- server internal error.
-  }
-});
+);
 
-router.post("/", auth, async (req, res) => {
+
+router.post("/", auth,async (req, res) => {
   const { error } = validate(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 

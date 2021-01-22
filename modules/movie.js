@@ -17,7 +17,7 @@ const Movie = mongoose.model("Movie", new mongoose.Schema({
       type: Number,
       required: true,
       min: 0,
-      max: 250,
+      max: 1000,
     },
     dailyRentalRate: {
       type: Number,
@@ -30,10 +30,10 @@ const Movie = mongoose.model("Movie", new mongoose.Schema({
 
 function validateMovie(movie) {  // The joi schema is what the client sends us like input and request.
   const schema = {
-    title: Joi.String().min(3).max(50).required(),
+    title: Joi.string().min(3).max(50).required(),
     genreId: Joi.objectId().required(),
-    numberInStock: Joi.Number().min(0).max(250).required(),
-    dailyRentalRate: Joi.Number().min(0).max(250).required(),
+    numberInStock: Joi.number().min(0).max(1000).required(),
+    dailyRentalRate: Joi.number().min(0).max(250).required(),
   };
   return Joi.validate(movie, schema);
 };
