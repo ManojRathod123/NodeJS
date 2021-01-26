@@ -8,8 +8,8 @@ const express = require("express");
 const router = express.Router();
 const _ = require("lodash");
 
-router.get("/",auth,  async (req, res) => {
-  const user = await User.findById(req.user._id).select('-password');
+router.get("/", async (req, res) => {
+  const user = await User.find().select('-password');
   res.send(user);
 });
 

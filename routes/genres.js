@@ -7,12 +7,10 @@ const router = express.Router();
 
 // create router....
 router.get("/",async (req, res) => { // here we have called function asyncMiddleware.
-  throw new Error('could not get the genres');
     const genres = await Genre.find().sort("name"); //find() method will get all the genres which is sorted by name.
     res.send(genres);
   }
 );
-
 
 router.post("/", auth,async (req, res) => {
   const { error } = validate(req.body);
