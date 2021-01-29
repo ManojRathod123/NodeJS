@@ -24,13 +24,16 @@ router.post('/', async (req, res) => {
   if (!validPassword)
     return res.status(400).send('invalid email id or password');
 
-    
+   
+  // here we are encrypting code with jwt sign....  
   const token = jwt.sign(
     { _id: user._id, isAdmin: user.isAdmin },
     config.get('jwtPrivateKey')
   );
+
   // jwt- (json-web-token)
   // const token = User.generateAuthToken();
+
   console.log(token);
   res.status(200).send({ token: token });
 });       
@@ -42,4 +45,4 @@ function validate(req) {
   };
   return Joi.validate(req, schema);
 }
-module.exports = router;
+module.exports = router;  
